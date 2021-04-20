@@ -14,10 +14,11 @@ namespace API.Controllers
         {
             _context = context;
         }
-
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers() 
         {
-            return await _context.Users.ToListAsync();
+            var users = await _context.Users.ToListAsync();
+            return users;
         }
     }
 }
