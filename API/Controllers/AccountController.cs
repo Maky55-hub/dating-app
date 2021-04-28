@@ -21,7 +21,7 @@ namespace API.Controllers
             _tokenService = tokenService;
         }
 
-        [HttpPost("register")]
+        [HttpPost("Register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto) 
         {
             using var hmac = new HMACSHA512();
@@ -45,7 +45,7 @@ namespace API.Controllers
             };
         }
 
-        [HttpPost("login")]
+        [HttpPost("Login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             var user = await _context.Users.SingleOrDefaultAsync(user => user.UserName == loginDto.UserName);
