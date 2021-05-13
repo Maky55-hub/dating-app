@@ -11,7 +11,6 @@ import { Observable } from 'rxjs';
 export class NavComponent implements OnInit {
 
   public loginFormModel: LoginDto = new LoginDto();
-  public currentUser$: Observable<UserDto>;
 
   constructor(public accountService: AccountService) { }
 
@@ -27,8 +26,6 @@ export class NavComponent implements OnInit {
     this.accountService.logout();
   }
 
-  ngOnInit() {
-    this.currentUser$ = this.accountService.currentUser$;
-  }
+  ngOnInit() {}
 
 }
